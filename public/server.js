@@ -7,29 +7,8 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const characters = [
-  {
-    routeName: 'yoda',
-    name: "Yoda",
-    role: "Jedi Master",
-    age: 900,
-    forcePoints: 2000
-  },
-  {
-    routeName: 'darthmaul',
-    name: "Darth Maul",
-    role: "Sith Lord",
-    age: 200,
-    forcePoints: 1200
-  },
-  {
-    routeName: 'obiwankenobi',
-    name: "Obi Wan Kenobi",
-    role: "Jedi",
-    age: 55,
-    forcePoints: 1000
-  }
-];
+
+const characters = require("../data/characters");
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "view.html"));
