@@ -63,22 +63,22 @@
   </div>
 
   <script type="text/javascript">
-
+  
     $("#add-btn").on("click", (event) => {
-        event.preventDefault();
+      event.preventDefault();
 
-        const newCharacter = {
-            name: $("#name").val().trim(),
-            role: $("#role").val().trim(),
-            age: $("#age").val().trim(),
-            forcePoints: $("#force-points").val().trim(),
-        };
+      const newCharacter = {
+        name: $("#name").val().trim(),
+        role: $("#role").val().trim(),
+        age: $("#age").val().trim(),
+        forcePoints: $("#force-points").val().trim(),
+      };
 
-        $.post("/api/characters", newCharacter).then((data) =>  {
-            alert(data.name + " added.");
+      $.post("/api/characters", newCharacter)
+        .then((data) => {
+          alert(data.name + " added.");
         });
     });
-
   </script>
-
 </body>
+</html>
